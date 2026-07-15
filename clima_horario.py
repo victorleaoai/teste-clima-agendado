@@ -31,9 +31,15 @@ def main():
         ar = buscar_json(ar_url)["current"]
 
         print(f"--- {cidade} ---")
-        print(f"Hora local: {hora_local}")
-        print(f"Temperatura: {clima['temperature']}°C | Vento: {clima['windspeed']} km/h")
-        print(f"Qualidade do ar (US AQI): {ar['us_aqi']} | PM2.5: {ar['pm2_5']} µg/m³")
+        print(f"Hora local / Local time / 当地时间 / يلحملا تقولا: {hora_local}")
+        print(
+            f"Temperatura / Temperature / 温度 / ةرارحلا ةجرد: "
+            f"{clima['temperature']}°C | Vento / Wind / 风速 / حايرلا ةعرس: {clima['windspeed']} km/h"
+        )
+        print(
+            f"Qualidade do ar / Air quality / 空气质量 / ءاوهلا ةدوج (US AQI): {ar['us_aqi']} | "
+            f"PM2.5: {ar['pm2_5']} µg/m³"
+        )
         print()
 
 
