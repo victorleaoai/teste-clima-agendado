@@ -19,7 +19,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Baixar código do repositório
+      - name: Baixar cÃ³digo do repositÃ³rio
         uses: actions/checkout@v4
 
       - name: Configurar Python
@@ -30,17 +30,17 @@ jobs:
       - name: Rodar script de clima
         run: python clima_horario.py
 
-      - name: Publicar resultado (commit aut
+      - name: Publicar resultado (commit automÃ¡tico)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Atualiza pagina de clima"
-          file_pattern: "docs/index.html his
+          file_pattern: "docs/index.html historico.json"
 
       - name: Preparar Pages
         uses: actions/configure-pages@v5
 
       - name: Empacotar site
-        uses: actions/upload-pages-artifact@
+        uses: actions/upload-pages-artifact@v3
         with:
           path: docs
 
