@@ -1,8 +1,6 @@
 name: Teste Clima Agendado
 
 on:
-  schedule:
-    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -32,17 +30,17 @@ jobs:
       - name: Rodar script de clima
         run: python clima_horario.py
 
-      - name: Publicar resultado (commit automático)
+      - name: Publicar resultado (commit aut
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Atualiza pagina de clima"
-          file_pattern: "docs/index.html historico.json"
+          file_pattern: "docs/index.html his
 
       - name: Preparar Pages
         uses: actions/configure-pages@v5
 
       - name: Empacotar site
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@
         with:
           path: docs
 
